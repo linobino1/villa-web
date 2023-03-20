@@ -8,7 +8,7 @@ services:
       - ./web:/usr/share/nginx/html
 
   listmonk:
-    image: listmonk/listmonk:latest
+    image: listmonk/listmonk:v2.4.0
     environment:
       TZ: Etc/UTC
     depends_on:
