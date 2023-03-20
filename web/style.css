@@ -1,0 +1,49 @@
+body {
+    font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    height: min(100vh, 400px);
+    align-items: center;
+}
+main {
+    text-align: center;
+}
+h1 {
+    font-size: x-large;
+    font-weight: bold;
+}
+.links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+    font-size: small;
+}
+
+footer {
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+    .links {
+        margin-top: 2em;
+        font-size: inherit;
+        flex-direction: column;
+        row-gap: 1em;
+    }
+}
