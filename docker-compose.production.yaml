@@ -3,15 +3,11 @@ version: "3.7"
 services:
 
   web:
-    image: nginx:1.21.3-alpine
     expose:
       - 80
     networks:
       - net
       - default
-    volumes:
-      - ./web:/usr/share/nginx/html
-    working_dir: /home/node/app/
     environment:
       VIRTUAL_HOST: ${DOMAIN_FRONTEND}
       LETSENCRYPT_HOST: ${DOMAIN_FRONTEND}
