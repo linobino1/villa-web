@@ -38,9 +38,7 @@ services:
     networks:
       - listmonk
     volumes:
-      - type: volume
-        source: listmonk-data
-        target: /var/lib/postgresql/data
+      - listmonk-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${LISTMONK_DB_USER}
       POSTGRES_PASSWORD: ${LISTMONK_DB_PASS}
