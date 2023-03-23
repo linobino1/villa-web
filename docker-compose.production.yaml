@@ -42,8 +42,8 @@ services:
         source: listmonk-data
         target: /var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: listmonk
-      POSTGRES_USER: listmonk
+      POSTGRES_USER: ${LISTMONK_DB_USER}
+      POSTGRES_PASSWORD: ${LISTMONK_DB_PASS}
       POSTGRES_DB: listmonk
     restart: always
 
@@ -59,9 +59,9 @@ services:
       DB_TYPE: pgsql
       DB_HOST: listmonk_db
       DB_PORT: 5432
+      DB_USER: ${LISTMONK_DB_USER}
+      DB_PASS: ${LISTMONK_DB_PASS}
       DB_NAME: listmonk
-      DB_USER: listmonk
-      DB_PASS: listmonk
       DB_DUMP_FREQ: 10080            # backup each week
       DB_CLEANUP_TIME: 525600        # clean backups they are older than 1 year
       DB_DUMP_BEGIN: 0745          # start first backup at 7:45
