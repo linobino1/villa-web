@@ -67,6 +67,7 @@ services:
       ENABLE_CHECKSUM: TRUE
       CHECKSUM: MD5
       COMPRESSION: GZ
+      CONTAINER_ENABLE_MONITORING: FALSE
     restart: always
 
   proxy:
