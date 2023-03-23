@@ -49,8 +49,8 @@ services:
 
   backupper:
     image: tiredofit/db-backup
-    links:
-     - listmonk_db
+    networks:
+      - listmonk
     volumes:
       - ./backups:/backup
       - ./tmp/backups:/tmp/backups    # shared tmp backup directory
