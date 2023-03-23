@@ -64,6 +64,7 @@ services:
       DB_PASS: listmonk
       DB_DUMP_FREQ: 10080            # backup each week
       DB_CLEANUP_TIME: 525600        # clean backups they are older than 1 year
+      DB_DUMP_BEGIN: 0745          # start first backup at 7:45
       ENABLE_CHECKSUM: TRUE
       CHECKSUM: MD5
       COMPRESSION: GZ
