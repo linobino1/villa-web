@@ -47,6 +47,28 @@ services:
       POSTGRES_DB: listmonk
     restart: always
 
+  backupper:
+    image: tiredofit/db-backup
+    links:
+     - listmonk_db
+    volumes:
+      - ./backups:/backup
+      - ./tmp/backups:/tmp/backups    # shared tmp backup directory
+    environment:
+      # DEBUG_MODE: TRUE
+      DB_TYPE: pgsql
+      DB_HOST: listmonk_db
+      DB_PORT: 5432
+      DB_NAME: ALL
+      DB_USER: listmonk
+      DB_PASS: listmonk
+      DB_DUMP_FREQ: 10080            # backup each week
+      DB_CLEANUP_TIME: 525600        # clean backups they are older than 1 year
+      ENABLE_CHECKSUM: TRUE
+      CHECKSUM: MD5
+      COMPRESSION: GZ
+    restart: always
+
   proxy:
     container_name: proxy
     image: jwilder/nginx-proxy:alpine
