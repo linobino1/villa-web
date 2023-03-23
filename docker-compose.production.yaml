@@ -59,7 +59,7 @@ services:
       DB_TYPE: pgsql
       DB_HOST: listmonk_db
       DB_PORT: 5432
-      DB_NAME: ALL
+      DB_NAME: listmonk
       DB_USER: listmonk
       DB_PASS: listmonk
       DB_DUMP_FREQ: 10080            # backup each week
