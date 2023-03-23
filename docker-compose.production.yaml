@@ -30,6 +30,11 @@ services:
       LISTMONK_app__admin_username: ${LISTMONK_USER}
       LISTMONK_app__admin_password: ${LISTMONK_PASS}
       LISTMONK_app__email_format: both
+      LISTMONK_db__host: listmonk_db
+      LISTMONK_db__port: 5432
+      LISTMONK_db__user: ${LISTMONK_DB_USER}
+      LISTMONK_db__password: ${LISTMONK_DB_PASS}
+      LISTMONK_db__database: listmonk
     restart: always
 
   listmonk_db:

@@ -14,13 +14,12 @@ admin_password = "listmonk"
 
 # Database.
 [db]
-host = "listmonk_db"
-port = 5432
-user = "listmonk"
-password = "listmonk"
-
-# Ensure that this database has been created in Postgres.
-database = "listmonk"
+# most of the settings are defined in docker-compose file
+# host = "listmonk_db"
+# port = 5432
+# user = "listmonk"
+# password = "listmonk"
+# database = "listmonk"
 
 ssl_mode = "disable"
 max_open = 25
